@@ -1,0 +1,248 @@
+{% extends "base.html" %}
+
+{% block title %}Track Package |{% endblock title %}
+
+{% block styles %}
+<style>
+    .timeline {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 0;
+        list-style: none;
+        margin: 0 -10px;
+        /* Reduced horizontal margin */
+    }
+
+    .timeline-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        flex: 1 0 18%;
+        /* Reduced flex-basis */
+        max-width: 18%;
+        /* Reduced max-width */
+        padding: 10px;
+        /* Reduced padding */
+        position: relative;
+    }
+
+    .timeline-item:not(:last-child)::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: -10px;
+        /* Reduced connector spacing */
+        width: 20px;
+        /* Reduced width */
+        height: 2px;
+        background-color: #007bff;
+        transform: translateY(-50%);
+        z-index: 1;
+    }
+
+    .timeline-icon {
+        width: 35px;
+        /* Reduced size */
+        height: 35px;
+        /* Reduced size */
+        border-radius: 50%;
+        background-color: #007bff;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 5px;
+        /* Reduced margin */
+    }
+
+    .timeline-date {
+        font-weight: bold;
+        color: #007bff;
+        margin-bottom: 3px;
+        /* Reduced spacing */
+        font-size: 0.9rem;
+        /* Slightly smaller font */
+    }
+
+    .timeline-desc {
+        font-size: 0.85rem;
+        /* Smaller font for compact look */
+    }
+
+    @media (max-width: 768px) {
+        .timeline-item {
+            flex: 1 0 40%;
+            /* Adjust for medium screens */
+            max-width: 40%;
+        }
+
+        .timeline-item:not(:last-child)::after {
+            right: -5px;
+            /* Reduce connector spacing */
+        }
+    }
+
+    @media (max-width: 576px) {
+        .timeline-item {
+            flex: 1 0 100%;
+            /* Full width on small screens */
+            max-width: 100%;
+            text-align: left;
+        }
+
+        .timeline-item:not(:last-child)::after {
+            display: none;
+        }
+    }
+</style>
+{% endblock styles %}
+
+{% block content %}
+
+{% include "partials/_breadcrumb.html" with section_title="Track Package" %}
+
+<!-- Service Area -->
+<div class="serv-area section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="offset-lg-2 col-lg-8 text-center">
+                <div class="section-title">
+                    <h6>Track Package</h6>
+                    <h4 class="text-danger">
+                        Carefully Enter Your Tracking Number And Click On The "Track" Button And Wait To Display
+                    </h4>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 text-center">
+                <form action="">
+                    <div class="mb-3 d-inline-block" style="max-width: 450px; width: 100%;">
+                        <label for="trackingNumber" class="form-label">Enter Consignment Number</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control form-control-lg" id="trackingNumber"
+                                placeholder="Example TRA-2345213" aria-describedby="trackingHelp">
+                            <button class="btn btn-primary btn-lg" type="submit">Track</button>
+                        </div>
+                        <div id="trackingHelp" class="form-text">Example TRA-2345213</div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="pb-5">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-lg-6">
+                <img src="https://placehold.co/600x400" alt="Package Image" class="img-fluid">
+            </div>
+            <div class="col-lg-6 d-flex align-items-center">
+                <ul class="list-group w-100 shadow">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <span class="fw-bold">Tracking Number:</span>
+                        <span>TRA-2345213</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <span class="fw-bold">Status:</span>
+                        <span>In Transit</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <span class="fw-bold">Service Type:</span>
+                        <span>Same-Day Delivery</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <span class="fw-bold">Estimated Delivery:</span>
+                        <span>23rd Dec 2024</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <span class="fw-bold">Departure:</span>
+                        <span>Lagos, Nigeria</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <span class="fw-bold">Destination:</span>
+                        <span>Accra, Ghana</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <span class="fw-bold">Current Location:</span>
+                        <span>Lagos Sorting Center</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <span class="fw-bold">Package Type:</span>
+                        <span>Box</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <span class="fw-bold">Weight and Dimension:</span>
+                        <span>3kg, 20cm x 30cm x 10cm.</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="container my-5">
+            <h5 class="text-center mb-4">Tracking Timeline</h5>
+            <ul class="timeline">
+                <li class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                    <span class="timeline-date">20th Dec 2024, 10:00 AM</span>
+                    <span class="timeline-desc">Departed Lagos Sorting Center</span>
+                </li>
+                <li class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                    <span class="timeline-date">19th Dec 2024, 2:30 PM</span>
+                    <span class="timeline-desc">Package Received at Lagos Sorting Center</span>
+                </li>
+                <li class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                    <span class="timeline-date">19th Dec 2024, 2:30 PM</span>
+                    <span class="timeline-desc">Package Received at Lagos Sorting Center</span>
+                </li>
+                <li class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fa-solid fa-truck"></i>
+                    </div>
+                    <span class="timeline-date">18th Dec 2024, 9:00 AM</span>
+                    <span class="timeline-desc">Package Picked Up from Sender</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="about-area gray-bg section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-12 col-sm-12">
+                <div class="feature-img">
+                    <img src="https://placehold.co/600x400" alt="">
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12 col-sm-12">
+                <div class="info-content-area">
+                    <div class="section-title">
+                        <h2>We Are With You</h2>
+                    </div>
+                    <p>In case of any difficulties in tracking your consignment, do not hesitate to contact our
+                        standing-by customer care.</p>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad amet et consequuntur illum at
+                        iure, praesentium iste voluptas itaque, quod excepturi cum neque totam voluptatem
+                        perferendis.</p>
+                    <p class="highlight">Kindly go through the period of our delivery and make yourself available
+                        for receiving</p>
+                    <p class="highlight">Be nice to cooperate with our Agent to ensure a successful delivery.</p>
+                    <p class="highlight">Be brave to lunch in your complain if the need be.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

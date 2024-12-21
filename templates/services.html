@@ -1,0 +1,129 @@
+{% extends "base.html" %}
+
+{% block title %}Our Services |{% endblock title %}
+
+{% block content %}
+
+{% include "partials/_breadcrumb.html" with section_title="Our Services" %}
+
+<!-- Service Area -->
+
+<div class="serv-area section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="offset-lg-2 col-lg-8 text-center">
+                <div class="section-title">
+                    <h6>What We Do</h6>
+                    <h2>We Provide Great Value For <br><b>Courier Services</b></h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <h5 class="mb-3">Our Specialization</h5>
+                <p>We have a wide network offices in all locations to help you with your shipping needs. Age is a
+                    courier company truly committed to maximizing productivity & efficiency by delivering uniquely
+                    designed shipping & logistics solutions to both corporate & individual clients.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="single-serv-item">
+                    <div class="serv-icon">
+                        <i class="fa-solid fa-box fa-2x"></i>
+                    </div>
+                    <div class="serv-content">
+                        <h5>Standard Courier</h5>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius tempore quam qui
+                            aspernatur, alias quis non nisi quas quaerat laborum culpa voluptatum.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="single-serv-item">
+                    <div class="serv-icon">
+                        <i class="fa-solid fa-box fa-2x"></i>
+                    </div>
+                    <div class="serv-content">
+                        <h5>Express Courier</h5>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius tempore quam qui
+                            aspernatur, alias quis non nisi quas quaerat laborum culpa voluptatum.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="single-serv-item">
+                    <div class="serv-icon">
+                        <i class="fa-solid fa-box fa-2x"></i>
+                    </div>
+                    <div class="serv-content">
+                        <h5>Over Night Courier</h5>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius tempore quam qui
+                            aspernatur, alias quis non nisi quas quaerat laborum culpa voluptatum.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="single-serv-item">
+                    <div class="serv-icon">
+                        <i class="fa-solid fa-box fa-2x"></i>
+                    </div>
+                    <div class="serv-content">
+                        <h5>Pallet Courier</h5>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius tempore quam qui
+                            aspernatur, alias quis non nisi quas quaerat laborum culpa voluptatum.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="single-serv-item">
+                    <div class="serv-icon">
+                        <i class="fa-solid fa-box fa-2x"></i>
+                    </div>
+                    <div class="serv-content">
+                        <h5>International Courier</h5>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius tempore quam qui
+                            aspernatur, alias quis non nisi quas quaerat laborum culpa voluptatum.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="single-serv-item">
+                    <div class="serv-icon">
+                        <i class="fa-solid fa-box fa-2x"></i>
+                    </div>
+                    <div class="serv-content">
+                        <h5>Warehousing</h5>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius tempore quam qui
+                            aspernatur, alias quis non nisi quas quaerat laborum culpa voluptatum.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--CTA Section-->
+
+<div id="cta-2" class="cta-area">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-5 col-md-8 col-12">
+                <h6>24/7 We Are Here</h6>
+                <h2>You can always reach out to us.</h2>
+            </div>
+            <div class="col-lg-6 offset-lg-1 col-md-4 text-end">
+                <div class="contact-info">
+                    <a href="{% url 'contact' %}" class="theme-btn">Make a Call</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

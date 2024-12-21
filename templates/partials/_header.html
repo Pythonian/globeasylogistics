@@ -1,0 +1,75 @@
+<!-- Header Area -->
+<div id="header-sticky" class="header-area">
+    <div class="navigation">
+        <div class="container">
+            <div class="header-inner-box">
+
+                <a class="navbar-brand text-uppercase fw-bold text-primary fs-5" href="{% url 'home' %}">
+                    GlobEasyLogistics
+                </a>
+
+                <div class="main-menu d-none d-lg-block">
+                    <ul>
+                        <li class="{% if request.path == '/' %}active{% endif %}">
+                            <a href="{% url 'home' %}">Home</a>
+                        </li>
+                        <li class="{% if request.path == '/about/' %}active{% endif %}">
+                            <a href="{% url 'about' %}">About Us</a>
+                        </li>
+                        <li class="{% if request.path == '/services/' %}active{% endif %}">
+                            <a href="{% url 'services' %}">Our Services</a>
+                        </li>
+                        <li class="{% if request.path == '/contact/' %}active{% endif %}">
+                            <a href="{% url 'contact' %}">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="header-right-content">
+                    <a href="{% url 'track' %}" class="theme-btn">Track Package</a>
+                </div>
+
+                <div class="mobile-nav-bar d-block col-sm-1 col-6 d-lg-none">
+                    <div class="mobile-nav-wrap">
+                        <div id="hamburger">
+                            <i class="fa-solid fa-bars"></i>
+                        </div>
+                        <!-- mobile menu - responsive menu -->
+                        <div class="mobile-nav">
+                            <button type="button" class="close-nav">
+                                <i class="fa fa-times-circle"></i>
+                            </button>
+                            <nav class="sidebar-nav">
+                                <ul class="metismenu" id="mobile-menu">
+                                    <li class="{% if request.path == '/' %}active{% endif %}">
+                                        <a href="{% url 'home' %}">Home</a>
+                                    </li>
+                                    <li class="{% if request.path == '/about/' %}active{% endif %}">
+                                        <a href="{% url 'about' %}">About Us</a>
+                                    </li>
+                                    <li class="{% if request.path == '/track/' %}active{% endif %}">
+                                        <a href="{% url 'track' %}">Track</a>
+                                    </li>
+                                    <li class="{% if request.path == '/services/' %}active{% endif %}">
+                                        <a href="{% url 'services' %}">Our Services</a>
+                                    </li>
+                                    <li class="{% if request.path == '/contact/' %}active{% endif %}">
+                                        <a href="{% url 'contact' %}">Contact Us</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                            <div class="action-bar">
+                                <a href="mailto:info@globeasylogistics.com">
+                                    <i class="fa-solid fa-envelope"></i>info@globeasylogistics.com
+                                </a>
+                                <a href="tel:123-456-7890">
+                                    <i class="fa-solid fa-phone"></i>123-456-7890
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

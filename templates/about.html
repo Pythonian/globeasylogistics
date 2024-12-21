@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+
+{% block title %}About Us |{% endblock title %}
+
+{% block content %}
+
+{% include "partials/_breadcrumb.html" with section_title="About Us" %}
+
+<!-- About Section-->
+
+<div class="about-area section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-12 col-sm-12">
+                <div class="info-content-area">
+                    <div class="section-title">
+                        <h6>About Us</h6>
+                        <h2>Welcome to <br><b>GlobEasyLogistics</b>.</h2>
+                    </div>
+                    <p>We are serve worldwide site lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea enim
+                        et, similique, minus soluta ducimus. Lorem ipsum dolor, sit amet consectetur adipisicing
+                        elit. Deserunt officia totam minima eos beatae, culpa quae assumenda sed. Corporis tempore
+                        nisi impedit, natus deleniti iure veritatis cum nihil? Iure, quos!</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam beatae facere, ex voluptates
+                        recusandae quasi minima pariatur incidunt officia.</p>
+                    <p class="highlight">Since our launch in 1995, to deliver high value package.</p>
+                    <p class="highlight">We always provide flexible & quality task. </p>
+                    <p class="highlight">Uninque latest machinary used the Logistics project.</p>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-12 col-sm-12">
+                <div class="feature-img">
+                    <img src="https://placehold.co/450x650" alt="">
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Choose Us Section -->
+
+<div class="chooseus-area section-padding gray-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="section-title">
+                    <h6>What We Offer</h6>
+                    <h2 class="section-heading">Why Choose Us?</h2>
+                </div>
+                <p class="highlight mb-20">The Most Eminent Visas and Immigration Consultant service provider.
+                    Branches in India and overseas.</p>
+                <div class="single-feature-item">
+                    <div class="num"><i class="fa-solid fa-check"></i></div>
+                    <div class="feature-content">
+                        <h5>We Understand Requirements</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta et doloribus, omnis!</p>
+                    </div>
+                </div>
+                <div class="single-feature-item">
+                    <div class="num"><i class="fa-solid fa-check"></i></div>
+                    <div class="feature-content">
+                        <h5>We Work Precisely </h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta et doloribus, omnis!</p>
+                    </div>
+                </div>
+                <div class="single-feature-item">
+                    <div class="num"><i class="fa-solid fa-check"></i></div>
+                    <div class="feature-content">
+                        <h5>We Deliver Best Output</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta et doloribus, omnis!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12">
+                <div class="feature-img">
+                    <img src="https://placehold.co/450x650" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--CTA Section-->
+
+<div id="cta-2" class="cta-area">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-8 col-12">
+                <h6>We Are Here For You</h6>
+                <h2>We Provide the Best Service in the Industry</h2>
+            </div>
+            <div class="col-md-4 text-end">
+                <div class="contact-info">
+                    <a href="{% url 'contact' %}" class="theme-btn">Contact us Today</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
