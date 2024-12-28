@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %}About Us |{% endblock title %}
 
@@ -6,41 +7,43 @@
 
 {% include "partials/_breadcrumb.html" with section_title="About Us" %}
 
-<!-- About Section-->
-
+<!-- About Section -->
 <div class="about-area section-padding">
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-md-12 col-sm-12">
                 <div class="info-content-area">
                     <div class="section-title">
-                        <h6>About Us</h6>
-                        <h2>Welcome to <br><b>GlobEasyLogistics</b>.</h2>
+                        <h1>Who We Are</h1>
                     </div>
-                    <p>We are serve worldwide site lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea enim
-                        et, similique, minus soluta ducimus. Lorem ipsum dolor, sit amet consectetur adipisicing
-                        elit. Deserunt officia totam minima eos beatae, culpa quae assumenda sed. Corporis tempore
-                        nisi impedit, natus deleniti iure veritatis cum nihil? Iure, quos!</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam beatae facere, ex voluptates
-                        recusandae quasi minima pariatur incidunt officia.</p>
-                    <p class="highlight">Since our launch in 1995, to deliver high value package.</p>
-                    <p class="highlight">We always provide flexible & quality task. </p>
-                    <p class="highlight">Uninque latest machinary used the Logistics project.</p>
+                    <p>
+                        At GlobEasyLogistics, we specialize in providing reliable, efficient, and seamless logistics
+                        solutions tailored to meet your needs. Our mission is to bridge distances and connect the world,
+                        ensuring your goods are delivered safely and on time.
+                    </p>
+                    <p>
+                        With years of experience in the logistics industry, we pride ourselves on our professionalism,
+                        innovative approach, and commitment to customer satisfaction. From small parcels to large
+                        freight shipments, we handle it all with precision and care.
+                    </p>
+                    <p>
+                        Our dedicated team is here to provide support every step of the way. Whether you’re shipping
+                        domestically or internationally, trust GlobEasyLogistics to make your delivery process smooth
+                        and stress-free.
+                    </p>
                 </div>
             </div>
 
             <div class="col-lg-6 col-md-12 col-sm-12">
                 <div class="feature-img">
-                    <img src="https://placehold.co/450x650" alt="">
+                    <img src="{% static 'img/office.jpg' %}" alt="GlobEasyLogistics">
                 </div>
             </div>
-
         </div>
     </div>
 </div>
 
-<!-- Choose Us Section -->
-
+<!-- Why Choose Us Section -->
 <div class="chooseus-area section-padding gray-bg">
     <div class="container">
         <div class="row">
@@ -49,51 +52,52 @@
                     <h6>What We Offer</h6>
                     <h2 class="section-heading">Why Choose Us?</h2>
                 </div>
-                <p class="highlight mb-20">The Most Eminent Visas and Immigration Consultant service provider.
-                    Branches in India and overseas.</p>
+                <p class="highlight mb-20">
+                    Discover why GlobEasyLogistics is the preferred choice for individuals and businesses worldwide.
+                </p>
                 <div class="single-feature-item">
                     <div class="num"><i class="fa-solid fa-check"></i></div>
                     <div class="feature-content">
-                        <h5>We Understand Requirements</h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta et doloribus, omnis!</p>
+                        <h5>Tailored Solutions</h5>
+                        <p>We customize our services to suit your unique needs, ensuring maximum efficiency and
+                            satisfaction.</p>
                     </div>
                 </div>
                 <div class="single-feature-item">
                     <div class="num"><i class="fa-solid fa-check"></i></div>
                     <div class="feature-content">
-                        <h5>We Work Precisely </h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta et doloribus, omnis!</p>
+                        <h5>Precision and Accuracy</h5>
+                        <p>Our team ensures every shipment is handled with care, precision, and attention to detail.</p>
                     </div>
                 </div>
                 <div class="single-feature-item">
                     <div class="num"><i class="fa-solid fa-check"></i></div>
                     <div class="feature-content">
-                        <h5>We Deliver Best Output</h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta et doloribus, omnis!</p>
+                        <h5>Timely Deliveries</h5>
+                        <p>We prioritize timely deliveries, ensuring your packages arrive on schedule every time.</p>
                     </div>
                 </div>
             </div>
             <div class="col-lg-6 col-md-12">
                 <div class="feature-img">
-                    <img src="https://placehold.co/450x650" alt="">
+                    <img src="{% static 'img/truck.jpg' %}" alt="Why Choose Us">
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<!--CTA Section-->
-
+<!-- CTA Section -->
 <div id="cta-2" class="cta-area">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-md-8 col-12">
                 <h6>We Are Here For You</h6>
-                <h2>We Provide the Best Service in the Industry</h2>
+                <h2>Delivering Excellence, One Shipment at a Time</h2>
             </div>
             <div class="col-md-4 text-end">
                 <div class="contact-info">
-                    <a href="{% url 'contact' %}" class="theme-btn">Contact us Today</a>
+                    <a href="{% url 'contact' %}" class="theme-btn">Contact Us Today</a>
                 </div>
             </div>
         </div>

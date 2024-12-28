@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %}Welcome To{% endblock title %}
 
@@ -8,7 +9,7 @@
 
 <div class="homepage-slides">
     <div class="single-slide-item">
-        <div class="image-layer" style="background-image: url(https://placehold.co/1200x400);">
+        <div class="image-layer" style="background-image: url({% static 'img/container.jpg' %});">
             <div class="overlay"></div>
         </div>
         <div class="hero-area-content">
@@ -16,9 +17,9 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-12">
                         <div class="section-title">
-                            <h1>We are experts in<br> <b>Global Courier</b></h1>
-                            <p> Logistics Revolution, in modern history, the process of change from an agrarian <br>and
-                                handicraft economy to one dominated by courier and deliver services.</p>
+                            <h1>Seamless <b>Logistics Solutions</b></h1>
+                            <p>Delivering reliability, speed, and care across the globe. Let us move what matters to
+                                you.</p>
                         </div>
                     </div>
                 </div>
@@ -43,7 +44,7 @@
                         <div class="col-lg-8 col-md-12 col-12">
                             <div class="feat-content">
                                 <h5>Flat Rate Fees</h5>
-                                <p>It is a long established fact that and reader will by the readable based.</p>
+                                <p>Transparent pricing with no hidden charges. Be assured of the best value.</p>
                             </div>
                         </div>
                     </div>
@@ -60,7 +61,7 @@
                         <div class="col-lg-8 col-md-12 col-12">
                             <div class="feat-content">
                                 <h5>24/7 Services</h5>
-                                <p>It is a long established fact that and reader will by the readable based.</p>
+                                <p>Available round the clock to meet your logistics needs anytime, anywhere.</p>
                             </div>
                         </div>
                     </div>
@@ -71,13 +72,14 @@
                     <div class="row gx-0">
                         <div class="col-lg-4 col-md-12 col-12 text-center">
                             <div class="feat-icon">
-                                <i class="fa-solid fa-truck fa-2x"></i>
+                                <i class="fa-solid fa-info-circle fa-2x"></i>
                             </div>
                         </div>
                         <div class="col-lg-8 col-md-12 col-12">
                             <div class="feat-content">
-                                <h5>Free Estimate</h5>
-                                <p>It is a long established fact that and reader will by the readable based.</p>
+                                <h5>Service Information</h5>
+                                <p>Get details about our services, and pricing directly from our
+                                    office.</p>
                             </div>
                         </div>
                     </div>
@@ -92,8 +94,8 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-md-8 col-12">
-                <h6>Are you expecting a Delivery?</h6>
-                <h2>You can track your package with a unique tracking number</h2>
+                <h6>Expecting a Delivery?</h6>
+                <h2>Track your package using your unique tracking number</h2>
             </div>
             <div class="col-md-4 text-end">
                 <div class="contact-info">
@@ -113,19 +115,21 @@
                 <div class="info-content-area">
                     <div class="section-title">
                         <h6>About Us</h6>
-                        <h2>We're leading <b>Courier <br>Service</b> in Nigeria</h2>
+                        <h2>A Leading <b>Courier Services</b> in the World!</h2>
                     </div>
-                    <p>We are serve worldwide site lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea enim et,
-                        similique, minus soluta ducimus.</p>
-                    <p class="highlight">Since our launch in 1995, to deliver high value package.</p>
-                    <p class="highlight">We always provide flexible & quality task. </p>
-                    <p class="highlight">Unique latest machinary used the Logistics project.</p>
+                    <p>GlobEasyLogistics connects businesses and individuals with efficient and reliable logistics
+                        solutions. From local deliveries to international shipments, we handle it all with precision and
+                        care.</p>
+                    <p class="highlight">We have grown and garnered enough expertise in delivering
+                        excellence.</p>
+                    <p class="highlight">We offer different flexible logistics tailored to your needs.</p>
+                    <p class="highlight">We make use of cutting-edge technology to ensure timely deliveries.</p>
                 </div>
             </div>
 
             <div class="col-lg-6 col-md-12 col-sm-12">
                 <div class="info-img">
-                    <img src="https://placehold.co/450x450" alt="">
+                    <img src="{% static 'img/about.jpg' %}" alt="Unsplash Image">
                 </div>
             </div>
 
@@ -141,7 +145,7 @@
             <div class="offset-lg-2 col-lg-8 text-center">
                 <div class="section-title">
                     <h6 class="text-white">Services</h6>
-                    <h2 class="text-white">We Provide Various Category <br><b>Delivery Services</b></h2>
+                    <h2 class="text-white">Comprehensive <b>Delivery Solutions</b></h2>
                 </div>
             </div>
         </div>
@@ -152,7 +156,7 @@
                         <i class="fa-solid fa-truck"></i>
                     </div>
                     <h4>Standard Courier</h4>
-                    <p>This services involve transferring the parcels to the closest depot to the delivery location.</p>
+                    <p>Reliable door-to-door delivery services for everyday shipping needs.</p>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-sm-12">
@@ -161,8 +165,7 @@
                         <i class="fa-solid fa-truck-ramp-box"></i>
                     </div>
                     <h4>Express Courier</h4>
-                    <p>This is a service provided to those who need urgent delivery to be sent and received on the same
-                        day.</p>
+                    <p>Fast and efficient same-day delivery for urgent packages.</p>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-sm-12">
@@ -171,7 +174,7 @@
                         <i class="fa-solid fa-truck-fast"></i>
                     </div>
                     <h4>Pallet Courier</h4>
-                    <p>This is a service that safely strict delivery and promptly delivers goods on pallets.</p>
+                    <p>Safe and secure transportation for palletized goods.</p>
                 </div>
             </div>
 
@@ -180,8 +183,8 @@
                     <div class="service-icon">
                         <i class="fa-solid fa-boxes-packing"></i>
                     </div>
-                    <h4>Over Night Courier</h4>
-                    <p>This courier will usually transport the goods during the night or early of the morning.</p>
+                    <h4>Overnight Courier</h4>
+                    <p>Deliveries made overnight to ensure your package arrives by morning.</p>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-sm-12">
@@ -190,7 +193,7 @@
                         <i class="fa-solid fa-box-open"></i>
                     </div>
                     <h4>International Courier</h4>
-                    <p>This is a transport service of goods or documents from one country to another country.</p>
+                    <p>Global shipping services to connect you with the world.</p>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-sm-12">
@@ -199,8 +202,7 @@
                         <i class="fa-solid fa-warehouse"></i>
                     </div>
                     <h4>Warehousing</h4>
-                    <p>This type of service will involve managed storage solutions to give companies greater control.
-                    </p>
+                    <p>Managed storage solutions for businesses of all sizes.</p>
                 </div>
             </div>
 
@@ -208,8 +210,8 @@
     </div>
 </div>
 
-<!-- Process Area -->
 
+<!-- Process Area -->
 <div class="process-area section-padding">
     <div class="container">
         <div class="row">
@@ -244,8 +246,8 @@
                     <div class="process-icon">
                         <i class="fa-2x text-primary fa-solid fa-credit-card"></i>
                     </div>
-                    <h4>Process</h4>
-                    <p>Pay for the package to be delivered while we move it to the sorting center.</p>
+                    <h4>Processing</h4>
+                    <p>Pay for the delivery while we move your package to the sorting center.</p>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 col-sm-12">
@@ -253,8 +255,8 @@
                     <div class="process-icon">
                         <i class="fa-2x text-primary fa-solid fa-compass"></i>
                     </div>
-                    <h4>Track Package</h4>
-                    <p>Track your package via our website until it gets to its final destination.</p>
+                    <h4>Track Your Package</h4>
+                    <p>Monitor your package via our website until it reaches its destination.</p>
                 </div>
             </div>
         </div>
@@ -262,22 +264,19 @@
 </div>
 
 <!-- FAQ Section  -->
-
 <div class="faq-area section-padding gray-bg">
     <div class="container">
         <div class="row">
             <div class="col-lg-6">
-
-                <img src="https://placehold.co/500x600" alt="">
-
+                <img src="{% static 'img/faq.jpg' %}" alt="Unsplash Image">
             </div>
             <div class="col-lg-6 mt-40 mb-50">
                 <div class="faq-content-wrapper">
                     <div class="section-title">
                         <h6>FAQ</h6>
-                        <h2 class="text-black">Helpful Frequently Asked Question</h2>
+                        <h2 class="text-black">Helpful Frequently Asked Questions</h2>
                     </div>
-                    <div 1class="cp-custom-accordion">
+                    <div class="cp-custom-accordion">
                         <div class="accordion" id="accordionExample">
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="headingOne">
@@ -289,9 +288,8 @@
                                 <div id="collapseOne" class="accordion-collapse collapse show"
                                     aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
-                                        Lorem ipsum dolor sit amet, consectetur adip iscing elit, sed do eiusmo
-                                        tempor incididunt ut labore et dolore ad magna aliqua. Ut enim ad minim
-                                        veniam, quis nostrud.
+                                        Deliveries are completed within the timeframe specified during the booking
+                                        process. Delays will be communicated promptly.
                                     </div>
                                 </div>
                             </div>
@@ -305,9 +303,8 @@
                                 <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
                                     data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
-                                        Lorem ipsum dolor sit amet, consectetur adip iscing elit, sed do eiusmo
-                                        tempor incididunt ut labore et dolore ad magna aliqua. Ut enim ad minim
-                                        veniam, quis nostrud.
+                                        The earliest pick-up date depends on availability. Typically, packages can be
+                                        picked up the next business day.
                                     </div>
                                 </div>
                             </div>
@@ -322,9 +319,39 @@
                                 <div id="collapseThree" class="accordion-collapse collapse"
                                     aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
-                                        Lorem ipsum dolor sit amet, consectetur adip iscing elit, sed do eiusmo
-                                        tempor incididunt ut labore et dolore ad magna aliqua. Ut enim ad minim
-                                        veniam, quis nostrud.
+                                        Payment can be made via cash, card, or mobile transfers at our office.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingFour">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseFour" aria-expanded="false"
+                                        aria-controls="collapseFour">
+                                        <span class="me-3">04</span>Can I reschedule a delivery?
+                                    </button>
+                                </h2>
+                                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        Yes, you can reschedule a delivery by contacting our support team. Additional
+                                        charges may apply.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingFive">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseFive" aria-expanded="false"
+                                        aria-controls="collapseFive">
+                                        <span class="me-3">05</span>What should I do if my package is damaged?
+                                    </button>
+                                </h2>
+                                <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        If your package is damaged, please report it to our office within 24 hours of
+                                        delivery for assistance.
                                     </div>
                                 </div>
                             </div>
@@ -335,5 +362,6 @@
         </div>
     </div>
 </div>
+
 
 {% endblock content %}

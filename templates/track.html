@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %}Track Package |{% endblock title %}
 
@@ -222,7 +223,7 @@
         <div class="row">
             <div class="col-lg-6 col-md-12 col-sm-12">
                 <div class="feature-img">
-                    <img src="https://placehold.co/600x400" alt="">
+                    <img src="{% static 'img/package.jpg' %}" alt="">
                 </div>
             </div>
             <div class="col-lg-6 col-md-12 col-sm-12">
@@ -232,9 +233,6 @@
                     </div>
                     <p>In case of any difficulties in tracking your consignment, do not hesitate to contact our
                         standing-by customer care.</p>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad amet et consequuntur illum at
-                        iure, praesentium iste voluptas itaque, quod excepturi cum neque totam voluptatem
-                        perferendis.</p>
                     <p class="highlight">Kindly go through the period of our delivery and make yourself available
                         for receiving</p>
                     <p class="highlight">Be nice to cooperate with our Agent to ensure a successful delivery.</p>
