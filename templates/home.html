@@ -6,10 +6,9 @@
 {% block content %}
 
 <!-- Hero Area -->
-
 <div class="homepage-slides">
     <div class="single-slide-item">
-        <div class="image-layer" style="background-image: url({% static 'img/container.jpg' %});">
+        <div class="image-layer" style="background-image: url({{ hero_section.background_image.url }});">
             <div class="overlay"></div>
         </div>
         <div class="hero-area-content">
@@ -17,9 +16,8 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-12">
                         <div class="section-title">
-                            <h1>Seamless <b>Logistics Solutions</b></h1>
-                            <p>Delivering reliability, speed, and care across the globe. Let us move what matters to
-                                you.</p>
+                            <h1>{{ hero_section.title }}</h1>
+                            <p>{{ hero_section.subtitle }}</p>
                         </div>
                     </div>
                 </div>
@@ -29,62 +27,28 @@
 </div>
 
 <!-- Feature Section -->
-
 <div class="feature-area">
     <div class="container">
         <div class="row">
+            {% for feature in features %}
             <div class="col-lg-4 col-md-6 col-12">
                 <div class="single-feature-item">
                     <div class="row gx-0">
                         <div class="col-lg-4 col-md-12 col-12 text-center">
                             <div class="feat-icon">
-                                <i class="fa-solid fa-user fa-2x"></i>
+                                <i class="fa-solid {{ feature.icon_class }} fa-2x"></i>
                             </div>
                         </div>
                         <div class="col-lg-8 col-md-12 col-12">
                             <div class="feat-content">
-                                <h5>Flat Rate Fees</h5>
-                                <p>Transparent pricing with no hidden charges. Be assured of the best value.</p>
+                                <h5>{{ feature.title }}</h5>
+                                <p>{{ feature.description }}</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 col-12">
-                <div class="single-feature-item">
-                    <div class="row gx-0">
-                        <div class="col-lg-4 col-md-12 col-12 text-center">
-                            <div class="feat-icon">
-                                <i class="fa-solid fa-clock fa-2x"></i>
-                            </div>
-                        </div>
-                        <div class="col-lg-8 col-md-12 col-12">
-                            <div class="feat-content">
-                                <h5>24/7 Services</h5>
-                                <p>Available round the clock to meet your logistics needs anytime, anywhere.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-12">
-                <div class="single-feature-item">
-                    <div class="row gx-0">
-                        <div class="col-lg-4 col-md-12 col-12 text-center">
-                            <div class="feat-icon">
-                                <i class="fa-solid fa-info-circle fa-2x"></i>
-                            </div>
-                        </div>
-                        <div class="col-lg-8 col-md-12 col-12">
-                            <div class="feat-content">
-                                <h5>Service Information</h5>
-                                <p>Get details about our services, and pricing directly from our
-                                    office.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
 </div>
@@ -107,7 +71,6 @@
 </div>
 
 <!-- About Section-->
-
 <div class="about-area section-padding">
     <div class="container">
         <div class="row">
@@ -138,11 +101,10 @@
 </div>
 
 <!-- Services Area -->
-
 <div id="service-1" class="services-area blue-bg section-padding pb-120">
     <div class="container">
         <div class="row">
-            <div class="offset-lg-2 col-lg-8 text-center">
+            <div class="col-lg-8 offset-lg-2 text-center">
                 <div class="section-title">
                     <h6 class="text-white">Services</h6>
                     <h2 class="text-white">Comprehensive <b>Delivery Solutions</b></h2>
@@ -150,66 +112,20 @@
             </div>
         </div>
         <div class="row">
+            {% for service in services %}
             <div class="col-lg-4 col-md-6 col-sm-12">
                 <div class="single-service-area mt-30 mb-50">
                     <div class="service-icon">
-                        <i class="fa-solid fa-truck"></i>
+                        <i class="fa-solid {{ service.icon_class }}"></i>
                     </div>
-                    <h4>Standard Courier</h4>
-                    <p>Reliable door-to-door delivery services for everyday shipping needs.</p>
+                    <h4>{{ service.title }}</h4>
+                    <p>{{ service.description }}</p>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 col-sm-12">
-                <div class="single-service-area service-2 mt-30 mb-50">
-                    <div class="service-icon">
-                        <i class="fa-solid fa-truck-ramp-box"></i>
-                    </div>
-                    <h4>Express Courier</h4>
-                    <p>Fast and efficient same-day delivery for urgent packages.</p>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12">
-                <div class="single-service-area service-3 mt-30 mb-50">
-                    <div class="service-icon">
-                        <i class="fa-solid fa-truck-fast"></i>
-                    </div>
-                    <h4>Pallet Courier</h4>
-                    <p>Safe and secure transportation for palletized goods.</p>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 col-sm-12">
-                <div class="single-service-area service-4 mt-30">
-                    <div class="service-icon">
-                        <i class="fa-solid fa-boxes-packing"></i>
-                    </div>
-                    <h4>Overnight Courier</h4>
-                    <p>Deliveries made overnight to ensure your package arrives by morning.</p>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12">
-                <div class="single-service-area service-5 mt-30">
-                    <div class="service-icon">
-                        <i class="fa-solid fa-box-open"></i>
-                    </div>
-                    <h4>International Courier</h4>
-                    <p>Global shipping services to connect you with the world.</p>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12">
-                <div class="single-service-area service-6 mt-30">
-                    <div class="service-icon">
-                        <i class="fa-solid fa-warehouse"></i>
-                    </div>
-                    <h4>Warehousing</h4>
-                    <p>Managed storage solutions for businesses of all sizes.</p>
-                </div>
-            </div>
-
+            {% endfor %}
         </div>
     </div>
 </div>
-
 
 <!-- Process Area -->
 <div class="process-area section-padding">
@@ -218,47 +134,22 @@
             <div class="offset-lg-2 col-lg-8 text-center">
                 <div class="section-title">
                     <h6>Our Process</h6>
-                    <h2>How We <b>Work</b> for <b>Customers</b></h2>
+                    <h2>How We Work for Customers</h2>
                 </div>
             </div>
         </div>
         <div class="row">
+            {% for step in process_steps %}
             <div class="col-lg-3 col-md-6 col-sm-12">
                 <div class="single-process-area">
                     <div class="process-icon">
-                        <i class="fa-2x text-primary fa-solid fa-person-walking"></i>
+                        <i class="fa-2x text-primary fa-solid {{ step.icon_class }}"></i>
                     </div>
-                    <h4>Pay a Visit</h4>
-                    <p>Visit us at our office location with your package to be delivered.</p>
+                    <h4>{{ step.title }}</h4>
+                    <p>{{ step.description }}</p>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-12">
-                <div class="single-process-area">
-                    <div class="process-icon">
-                        <i class="fa-2x text-primary fa-solid fa-receipt"></i>
-                    </div>
-                    <h4>Documentation</h4>
-                    <p>Provide us with the information of the package you want delivered.</p>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-12">
-                <div class="single-process-area">
-                    <div class="process-icon">
-                        <i class="fa-2x text-primary fa-solid fa-credit-card"></i>
-                    </div>
-                    <h4>Processing</h4>
-                    <p>Pay for the delivery while we move your package to the sorting center.</p>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-12">
-                <div class="single-process-area">
-                    <div class="process-icon">
-                        <i class="fa-2x text-primary fa-solid fa-compass"></i>
-                    </div>
-                    <h4>Track Your Package</h4>
-                    <p>Monitor your package via our website until it reaches its destination.</p>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
 </div>
@@ -267,94 +158,38 @@
 <div class="faq-area section-padding gray-bg">
     <div class="container">
         <div class="row">
-            <div class="col-lg-6">
-                <img src="{% static 'img/faq.jpg' %}" alt="Unsplash Image">
+            <div class="offset-lg-2 col-lg-8 text-center">
+                <div class="section-title">
+                    <h6>FAQ</h6>
+                    <h2>Frequently Asked Questions</h2>
+                </div>
             </div>
-            <div class="col-lg-6 mt-40 mb-50">
+        </div>
+        <div class="row">
+            <div class="col-lg-8 col-12 mt-40 mb-50 mx-auto">
                 <div class="faq-content-wrapper">
-                    <div class="section-title">
-                        <h6>FAQ</h6>
-                        <h2 class="text-black">Helpful Frequently Asked Questions</h2>
-                    </div>
                     <div class="cp-custom-accordion">
-                        <div class="accordion" id="accordionExample">
+                        <div class="accordion" id="accordionFAQ">
+                            {% for faq in faqs %}
                             <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingOne">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                        <span class="me-3">01</span>When can I expect my delivery?
+                                <h2 class="accordion-header" id="heading{{ forloop.counter }}">
+                                    <button class="accordion-button {% if not forloop.first %}collapsed{% endif %}"
+                                        type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapse{{ forloop.counter }}"
+                                        aria-expanded="{% if forloop.first %}true{% else %}false{% endif %}"
+                                        aria-controls="collapse{{ forloop.counter }}">
+                                        <span class="me-3">0{{ forloop.counter }}</span>{{ faq.question }}
                                     </button>
                                 </h2>
-                                <div id="collapseOne" class="accordion-collapse collapse show"
-                                    aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                <div id="collapse{{ forloop.counter }}"
+                                    class="accordion-collapse collapse {% if forloop.first %}show{% endif %}"
+                                    aria-labelledby="heading{{ forloop.counter }}" data-bs-parent="#accordionFAQ">
                                     <div class="accordion-body">
-                                        Deliveries are completed within the timeframe specified during the booking
-                                        process. Delays will be communicated promptly.
+                                        {{ faq.answer }}
                                     </div>
                                 </div>
                             </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingTwo">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                        <span class="me-3">02</span>What is the first possible pick-up date?
-                                    </button>
-                                </h2>
-                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                                    data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        The earliest pick-up date depends on availability. Typically, packages can be
-                                        picked up the next business day.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingThree">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseThree" aria-expanded="false"
-                                        aria-controls="collapseThree">
-                                        <span class="me-3">03</span>How can I pay for the service?
-                                    </button>
-                                </h2>
-                                <div id="collapseThree" class="accordion-collapse collapse"
-                                    aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        Payment can be made via cash, card, or mobile transfers at our office.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingFour">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseFour" aria-expanded="false"
-                                        aria-controls="collapseFour">
-                                        <span class="me-3">04</span>Can I reschedule a delivery?
-                                    </button>
-                                </h2>
-                                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
-                                    data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        Yes, you can reschedule a delivery by contacting our support team. Additional
-                                        charges may apply.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingFive">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseFive" aria-expanded="false"
-                                        aria-controls="collapseFive">
-                                        <span class="me-3">05</span>What should I do if my package is damaged?
-                                    </button>
-                                </h2>
-                                <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
-                                    data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        If your package is damaged, please report it to our office within 24 hours of
-                                        delivery for assistance.
-                                    </div>
-                                </div>
-                            </div>
+                            {% endfor %}
                         </div>
                     </div>
                 </div>
@@ -362,6 +197,5 @@
         </div>
     </div>
 </div>
-
 
 {% endblock content %}
