@@ -13,6 +13,7 @@ def send_email_via_mailjet(
     html_content,
     recipient_email,
     recipient_name=None,
+    reply_to=None,
 ):
     try:
         mailjet = Client(
@@ -30,6 +31,10 @@ def send_email_via_mailjet(
             "Name": recipient_name if recipient_name else recipient_email.split("@")[0],
         }
 
+        headers = {}
+        if reply_to:
+            headers["Reply-To"] = reply_to
+
         data = {
             "Messages": [
                 {
@@ -38,6 +43,7 @@ def send_email_via_mailjet(
                     "Subject": subject,
                     "TextPart": text_content,
                     "HTMLPart": html_content,
+                    "Headers": headers,
                 }
             ]
         }
@@ -63,6 +69,7 @@ def send_email_thread(
     html_content,
     recipient_email,
     recipient_name=None,
+    reply_to=None,
 ):
     email_thread = threading.Thread(
         target=send_email_via_mailjet,
@@ -72,6 +79,7 @@ def send_email_thread(
             html_content,
             recipient_email,
             recipient_name,
+            reply_to,
         ),
     )
     email_thread.start()

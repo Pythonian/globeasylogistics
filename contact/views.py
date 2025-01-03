@@ -47,6 +47,7 @@ def send_contact_form(request):
                     "email": email,
                     "body": body,
                     "current_year": current_year,
+                    "company_name": "GlobEasyLogistics Courier Service",
                 }
 
                 # Render email templates
@@ -61,13 +62,14 @@ def send_contact_form(request):
 
                 email_subject = f"Contact Form: {subject}"
                 recipient = settings.DEFAULT_FROM_EMAIL
-                # TODO: reply_to = [email]
+                reply_to = email
 
                 send_email_thread(
                     email_subject,
                     text_content,
                     html_content,
                     recipient,
+                    reply_to=reply_to,
                 )
 
                 return JsonResponse({"status": "success"}, status=200)

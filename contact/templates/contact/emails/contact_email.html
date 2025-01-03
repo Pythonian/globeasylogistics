@@ -3,11 +3,12 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ subject }}</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-color: #f9f9f9;
             padding: 20px;
         }
 
@@ -15,18 +16,31 @@
             background-color: #ffffff;
             padding: 20px;
             border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 0 auto;
         }
 
         .header {
             background-color: #004080;
             color: #ffffff;
-            padding: 10px;
+            padding: 15px;
             text-align: center;
             border-radius: 5px 5px 0 0;
         }
 
+        .header h2 {
+            margin: 0;
+            font-size: 24px;
+        }
+
         .content {
             margin-top: 20px;
+        }
+
+        .content p {
+            margin: 10px 0;
+            line-height: 1.6;
         }
 
         .footer {
@@ -35,22 +49,26 @@
             color: #777777;
             text-align: center;
         }
+
+        .footer p {
+            margin: 5px 0;
+        }
     </style>
 </head>
 
 <body>
     <div class="email-container">
         <div class="header">
-            <h2>SeemssAfrica</h2>
+            <h2>{{ company_name }}</h2>
         </div>
         <div class="content">
             <p><strong>Subject:</strong> {{ subject }}</p>
-            <p><strong>From:</strong> {{ name }} ({{ email }})</p>
+            <p><strong>From:</strong> {{ name }} (<a href="mailto:{{ email }}">{{ email }}</a>)</p>
             <p><strong>Message:</strong></p>
             <p>{{ body|linebreaks }}</p>
         </div>
         <div class="footer">
-            <p>&copy; {{ current_year }} SeemssAfrica. All rights reserved.</p>
+            <p>&copy; {{ current_year }} {{ company_name }}. All rights reserved.</p>
         </div>
     </div>
 </body>
