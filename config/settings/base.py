@@ -1,9 +1,12 @@
 from pathlib import Path
 from decouple import config
+from decouple import Csv
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 SECRET_KEY = config("SECRET_KEY")
+
+ALLOWED_HOSTS = config("ALLOWED_HOSTS", cast=Csv())
 
 INSTALLED_APPS = [
     # Django Apps

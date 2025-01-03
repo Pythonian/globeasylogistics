@@ -1,12 +1,9 @@
 import sentry_sdk
 from sentry_sdk.integrations.django import DjangoIntegration
-from decouple import Csv
 
 from .base import *
 
 DEBUG = False
-
-ALLOWED_HOSTS = config("ALLOWED_HOSTS", cast=Csv())
 
 DATABASES = {
     "default": {
