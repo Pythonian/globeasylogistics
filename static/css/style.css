@@ -332,6 +332,7 @@ input,
 textarea,
 select {
   width: 100%;
+  color: #fff;
   background: transparent;
   border: 1px solid #eee;
   padding: 13px 20px;

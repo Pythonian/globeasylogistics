@@ -9,19 +9,16 @@
                             <i class="fa-solid fa-truck-fast fst-italic"></i> GlobEasyLogistics
                         </a>
                     </div>
-                    <p>GlobEasyLogistics provides reliable and efficient courier services, ensuring your packages reach
-                        their destination on time and in perfect condition. Trust us for all your logistics needs.</p>
+                    <p>{{ contact.footer_info }}</p>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h5>Address</h5>
-                    <p>175 24th Street, Office 3567
-                        Ikeja, Lagos, Nigeria
-                    </p>
+                    <p>{{ contact.address|safe }}</p>
                     <div class="company-email">
-                        <a href="mailto:globeasylogistics@gmail.com">globeasylogistics@gmail.com</a>
+                        <a href="mailto:{{ contact.email }}">{{ contact.email }}</a>
                     </div>
                     <div class="phone-number">
-                        <p>0809-2233-999</p>
+                        <p>{{ contact.phone_number }}</p>
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-6 com-sm-12">
@@ -31,7 +28,7 @@
                             <a href="{% url 'track' %}">Track</a>
                             <a href="{% url 'about' %}">About</a>
                             <a href="{% url 'services' %}">Services</a>
-                            <a href="{% url 'contact' %}">Contact</a>
+                            <a href="{% url 'contact:form' %}">Contact</a>
                         </li>
                     </ul>
                 </div>
@@ -40,9 +37,10 @@
                     <ul>
                         <li>
                             <div class="social-area">
-                                <a href="#"><i class="fa-brands fa-facebook-f"></i>Facebook</a>
-                                <a href="#"><i class="fa-brands fa-instagram"></i>Instagram</a>
-                                <a href="#"><i class="fa-brands fa-twitter"></i>Twitter</a>
+                                <a href="{{ contact.facebook_url }}"><i class="fa-brands fa-facebook-f"></i>Facebook</a>
+                                <a href="{{ contact.instagram_url }}"><i
+                                        class="fa-brands fa-instagram"></i>Instagram</a>
+                                <a href="{{ contact.twitter_url }}"><i class="fa-brands fa-twitter"></i>Twitter</a>
                             </div>
                         </li>
                     </ul>
@@ -58,7 +56,7 @@
     <div class="container">
         <div class="row justify-content-center align-items-center justify-content-center">
             <div class="col-lg-6 col-md-6 col-sm-12">
-                <p class="copyright-line">&copy;2024 GlobEasyLogistics</p>
+                <p class="copyright-line">&copy;{% now "Y" %} GlobEasyLogistics</p>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12 text-md-end">
                 <p class="privacy">&bull; All rights reserved &bull;</p>

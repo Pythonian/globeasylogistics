@@ -5,6 +5,7 @@ from django.urls import path, include
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path("contact/", include("contact.urls", namespace="contact")),
     path("", include("packages.urls")),
     path("ckeditor5/", include("django_ckeditor_5.urls")),
 ]
@@ -19,6 +20,6 @@ if settings.DEBUG:
         document_root=settings.MEDIA_ROOT,
     )
 
-admin.site.site_header = "GlobEasyLogistics"
+admin.site.site_header = "GlobEasyLogistics Admin"
 admin.site.index_title = "GlobEasyLogistics Admin"
 admin.site.site_title = "GlobEasyLogistics Administration"

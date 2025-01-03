@@ -1,0 +1,198 @@
+{% extends "base.html" %}
+
+{% block title %}Contact Us |{% endblock title %}
+
+{% block content %}
+
+{% include "partials/_breadcrumb.html" with section_title="Contact Us" %}
+
+<!-- Contact Information -->
+<div id="contact-us" class="contact-us-area section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="offset-lg-2 col-lg-8 text-center">
+                <div class="section-title">
+                    <h6>Contact Us</h6>
+                    <h2>Do not hesitate to reach out <br>to us for any Information.</h2>
+                </div>
+            </div>
+        </div>
+        <div class="contact-us-wrapper">
+            <div class="row no-gutters">
+                <div class="col-lg-3 col-md-6 col-12">
+                    <div class="contact-us-inner">
+                        <div class="info-i"><span><i class="las la-map-marker"></i></span></div>
+                        <h5>Office Location</h5>
+                        <p>{{ contact.address|safe }}</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-12">
+                    <div class="contact-us-inner text-start">
+                        <div class="info-i"><span><i class="las la-clock"></i></span></div>
+                        <h5>Office Hour</h5>
+                        <p>{{ contact.office_hours|safe }}</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-12">
+                    <div class="contact-us-inner">
+                        <div class="info-i"><span><i class="las la-mobile"></i></span></div>
+                        <h5>Phone Number</h5>
+                        <p>{{ contact.phone_number }}</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-12">
+                    <div class="contact-us-inner">
+                        <div class="info-i"><span><i class="las la-envelope"></i></span></div>
+                        <h5>E-mail Address</h5>
+                        <p>{{ contact.email }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Contact Form -->
+<div id="contact-page" class="contact-section section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-12 text-center">
+                <div class="contact-form-wrapper mt-100">
+                    <div class="section-title">
+                        <h6 class="text-white">Stay with Us</h6>
+                        <h2>Get in <b>Touch</b></h2>
+                    </div>
+                    <div class="contact-form">
+                        <div id="formResponse" class="alert d-none" role="alert"></div>
+                        <form id="contactForm" method="post" class="needs-validation" novalidate>
+                            {% csrf_token %}
+                            <div class="messages"></div>
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-12">
+                                    {{ form.name }}
+                                    <div class="valid-feedback">Looks good!</div>
+                                    <div class="invalid-feedback">Please enter your name.</div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-12">
+                                    {{ form.email }}
+                                    <div class="valid-feedback">Looks good!</div>
+                                    <div class="invalid-feedback">Please provide a valid email address.</div>
+                                </div>
+                                <div class="col-12">
+                                    {{ form.subject }}
+                                    <div class="valid-feedback">Looks good!</div>
+                                    <div class="invalid-feedback">Please enter a subject.</div>
+                                </div>
+                                <div class="col-lg-12">
+                                    {{ form.body }}
+                                    <div class="valid-feedback">Looks good!</div>
+                                    <div class="invalid-feedback">Please enter your message.</div>
+                                </div>
+                                <div class="col-lg-12 col-md-6 col-12 text-center">
+                                    <button type="submit" class="theme-btn btn-send">Send Message</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const form = document.getElementById('contactForm');
+        const submitBtn = document.querySelector('.btn-send');
+        const formResponse = document.getElementById('formResponse');
+
+        // Get CSRF token from cookies
+        function getCookie(name) {
+            let cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                const cookies = document.cookie.split(';');
+                for (let i = 0; i < cookies.length; i++) {
+                    const cookie = cookies[i].trim();
+                    // Does this cookie string begin with the name we want?
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+
+        const csrftoken = getCookie('csrftoken');
+
+        // Form submission handler
+        form.addEventListener('submit', async (event) => {
+            event.preventDefault();
+
+            // Validate the form
+            if (!form.checkValidity()) {
+                event.stopPropagation();
+                form.classList.add('was-validated');
+                return;
+            }
+
+            // Show loading state in the button
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = `
+                <span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span> Sending...
+            `;
+
+            // Collect form data
+            const formData = {
+                name: document.getElementById('id_name').value.trim(),
+                email: document.getElementById('id_email').value.trim(),
+                subject: document.getElementById('id_subject').value.trim(),
+                body: document.getElementById('id_body').value.trim(),
+            };
+
+            try {
+                // Send data via Fetch API with CSRF token
+                const response = await fetch('send-contact/', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRFToken': csrftoken,
+                    },
+                    body: JSON.stringify(formData),
+                });
+
+                const result = await response.json();
+
+                // Show success or error message
+                if (response.ok && result.status === 'success') {
+                    formResponse.classList.remove('d-none', 'alert-danger');
+                    formResponse.classList.add('alert-success');
+                    formResponse.textContent = 'Your message was sent successfully!';
+
+                    // Reset the form
+                    form.reset();
+                    form.classList.remove('was-validated');
+                } else if (response.status === 400 && result.status === 'error') {
+                    let errorMessages = '';
+                    for (let field in result.errors) {
+                        errorMessages += `${field}: ${result.errors[field].join(', ')}\n`;
+                    }
+                    formResponse.classList.remove('d-none', 'alert-success');
+                    formResponse.classList.add('alert-danger');
+                    formResponse.textContent = errorMessages || 'There were errors in your submission.';
+                } else {
+                    throw new Error(result.message || 'An error occurred.');
+                }
+            } catch (error) {
+                formResponse.classList.remove('d-none', 'alert-success');
+                formResponse.classList.add('alert-danger');
+                formResponse.textContent = `Error: ${error.message}`;
+            } finally {
+                // Reset the submit button
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = 'Send message';
+            }
+        });
+    });
+</script>
+{% endblock content %}

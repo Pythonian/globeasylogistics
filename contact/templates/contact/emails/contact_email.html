@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{{ subject }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        .email-container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        .header {
+            background-color: #004080;
+            color: #ffffff;
+            padding: 10px;
+            text-align: center;
+            border-radius: 5px 5px 0 0;
+        }
+
+        .content {
+            margin-top: 20px;
+        }
+
+        .footer {
+            margin-top: 30px;
+            font-size: 12px;
+            color: #777777;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="email-container">
+        <div class="header">
+            <h2>SeemssAfrica</h2>
+        </div>
+        <div class="content">
+            <p><strong>Subject:</strong> {{ subject }}</p>
+            <p><strong>From:</strong> {{ name }} ({{ email }})</p>
+            <p><strong>Message:</strong></p>
+            <p>{{ body|linebreaks }}</p>
+        </div>
+        <div class="footer">
+            <p>&copy; {{ current_year }} SeemssAfrica. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+
+</html>

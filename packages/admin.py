@@ -6,6 +6,11 @@ from .models import (
     ProcessStep,
     AboutSection,
     Service,
+    Package,
+    Payment,
+    Sender,
+    Recipient,
+    TrackingUpdate,
 )
 
 
@@ -41,3 +46,109 @@ class FeatureAdmin(admin.ModelAdmin):
 @admin.register(FrequentlyAskedQuestion)
 class FrequentlyAskedQuestionAdmin(admin.ModelAdmin):
     list_display = ("question",)
+
+
+class PaymentInline(admin.StackedInline):
+    model = Payment
+    extra = 1
+    max_num = 1
+    classes = ["collapse"]
+
+
+class SenderInline(admin.StackedInline):
+    model = Sender
+    extra = 1
+    max_num = 1
+    classes = ["collapse"]
+
+
+class RecipientInline(admin.StackedInline):
+    model = Recipient
+    extra = 1
+    max_num = 1
+    classes = ["collapse"]
+
+
+class TrackingUpdateInline(admin.TabularInline):
+    model = TrackingUpdate
+    extra = 1
+    readonly_fields = ["timestamp"]
+
+
+@admin.register(Package)
+class PackageAdmin(admin.ModelAdmin):
+    list_display = (
+        "tracking_number",
+        "current_status",
+        "shipment_type",
+        "estimated_delivery_date",
+        "created_at",
+    )
+    list_filter = (
+        "current_status",
+        "shipment_type",
+        "return_status",
+        "created_at",
+    )
+    search_fields = (
+        "tracking_number",
+        "point_of_departure",
+        "receiving_address",
+        "courier_personnel",
+    )
+    inlines = [
+        SenderInline,
+        RecipientInline,
+        PaymentInline,
+        TrackingUpdateInline,
+    ]
+
+    fieldsets = (
+        (
+            "BASIC INFORMATION",
+            {
+                "fields": (
+                    "title",
+                    "image",
+                    "description",
+                ),
+            },
+        ),
+        (
+            "DELIVERY INFORMATION",
+            {
+                "fields": (
+                    "current_status",
+                    "shipment_type",
+                    "point_of_departure",
+                    "receiving_address",
+                    "estimated_delivery_date",
+                ),
+            },
+        ),
+        (
+            "PACKAGE DETAILS",
+            {
+                "classes": ("collapse",),
+                "fields": (
+                    "weight",
+                    "dimensions",
+                    "special_instructions",
+                ),
+            },
+        ),
+        (
+            "RETURN INFORMATION",
+            {
+                "classes": ("collapse",),
+                "fields": (
+                    "return_status",
+                    "return_instructions",
+                ),
+            },
+        ),
+    )
+    readonly_fields = (
+        "package_uuid",
+        "tracking_number",
+    )

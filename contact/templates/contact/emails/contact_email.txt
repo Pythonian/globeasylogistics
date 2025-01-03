@@ -1,0 +1,7 @@
+{{ company_name }}
+
+Subject: {{ subject }}
+From: {{ name }} ({{ email }})
+
+Message:
+{{ body }}
